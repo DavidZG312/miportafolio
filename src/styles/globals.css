@@ -25,3 +25,8 @@ body {
     rgb(var(--background-start-rgb));
 }
  */
+
+/* Transición que hace que el ancho del divisor se reduzca */
+.transition-all {
+  transition: all 0.3s ease-in-out;
+}

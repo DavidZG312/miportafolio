@@ -52,19 +52,19 @@ const About = () => {
         </video>
       </div>
       <div className="relative z-10">
-        <div className="flex flex-col items-center justify-center px-4 py-16 sm:px-6 lg:py-24 lg:px-8">
+        <div className="flex flex-col items-center justify-center px-4 py-16 sm:px-6 lg:py-12 lg:px-8">
         {/*   <img
             src="/profile.jpg"
             alt="Profile"
             className="rounded-full h-48 w-48 border-4 border-white"
           /> */}
           <div className="relative">
-            <div className="h-72 bg-cover bg-center bg-gray-400" style={{ backgroundImage:`url('/img/profile.jpg')` }}>
+            <div className="h-64 w-64 bg-cover bg-center bg-gray-400 rounded-full" style={{ backgroundImage:`url('/img/profile.jpg')` }}>
             </div>
-            <div className="flex flex-col items-center justify-center bg-gray-100 px-4 py-8">
-              <hr className="border-t-4 border-blue-500 w-16 rounded-full mb-4" />
-              <h2 className="text-gray-800 text-2xl font-bold mb-4">David Zabala Granados</h2>
-              <h4 className="text-gray-600 text-lg font-medium">Desarrollador Front-end</h4>
+            <div className="flex flex-col items-center justify-center px-4 py-8">
+              <hr className="border-t-4 border-rgb-23-10-28 w-64 rounded-full mb-4" />
+              <h2 className="text-rgb-23-10-28 text-2xl font-bold mb-4">David Zabala Granados</h2>
+              <h4 className="text-rgb-23-10-28 text-lg font-medium">Desarrollador Front-end</h4>
             </div>
           </div>
         </div>
