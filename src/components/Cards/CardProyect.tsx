@@ -6,9 +6,10 @@ interface Props {
     imageUrl: string;
     iconUrl?: string;
     url?: string;
+    handleClick: () => any;
 }
 
-const CardProject = ({ title, description, imageUrl, iconUrl = "/icons/MagnifyingGlass.svg", url = "#" }: Props) => {
+const CardProject = ({ title, description, imageUrl, iconUrl = "/icons/MagnifyingGlass.svg", url = "#", handleClick }: Props) => {
     const [isHovered, setIsHovered] = React.useState(false);
 
     return (
@@ -17,6 +18,7 @@ const CardProject = ({ title, description, imageUrl, iconUrl = "/icons/Magnifyin
                 className="relative border h-52 bg-gray-100 border-gray-200 rounded-md shadow-lg w-full h-260px overflow-hidden transition-transform duration-300 ease-in-out transform hover:scale-105"
                 onMouseEnter={() => setIsHovered(true)}
                 onMouseLeave={() => setIsHovered(false)}
+                onClick={handleClick}
             >
                 <div className="absolute inset-0 bg-cover bg-center z-0" style={{ backgroundImage: `url(${imageUrl})` }}>
                     <div className="opacity-0 absolute inset-0 z-10 hover:opacity-50 transition-opacity"></div>
