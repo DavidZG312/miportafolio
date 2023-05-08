@@ -36,7 +36,7 @@ const Portfolio = () => {
     }
 
     return (
-        <div className="px-4 py-10">
+        <div className="px-4 py-10" id="portafolio">
             <h1 className="text-2xl font-bold mb-6 text-center">PORTAFOLIO</h1>
             <div className="border-b-2 border-rgb-23-10-28 w-4/5 mb-8 tex m-auto" style={{ height: '1px' }} />
             <div className="grid gap-8 grid-cols-1 md:grid-cols-3">

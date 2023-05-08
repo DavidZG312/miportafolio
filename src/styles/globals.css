@@ -4,6 +4,7 @@
 
 :root {
   --foreground-rgb: 243, 242, 239;
+  scroll-behavior: smooth;
 }
 
 /*

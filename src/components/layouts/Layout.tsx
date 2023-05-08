@@ -1,10 +1,11 @@
-import Link from "next/link";
 import React, { useState } from "react";
 import { useRouter } from 'next/router';
+
+
 interface LayoutProps {
   children: React.ReactNode;
 }
-
+import { Link } from 'react-scroll'
 const Layout: React.FC<LayoutProps> = ({ children }) => {
 
   const router = useRouter();
@@ -59,9 +60,10 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
             </button>
           </div>
           <nav className="hidden lg:flex space-x-4">
-            <a className="text-white">Inicio</a>
-            <a className="text-white">Portafolio</a>
-            <a className="text-white">Contacto</a>
+            <Link to="portafolio" smooth={true} duration={500} className="text-white cursor-pointer">Portafolio</Link>
+            <Link to="portafolio" smooth={true} duration={500} className="text-white cursor-pointer">Skillset</Link>
+            <Link to="portafolio" smooth={true} duration={500} className="text-white cursor-pointer">Experiencia</Link>
+            <Link to="portafolio" smooth={true} duration={500} className="text-white cursor-pointer">Contact</Link>
           </nav>
         </header>
         <div
