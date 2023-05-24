@@ -31,3 +31,23 @@ body {
 .transition-all {
   transition: all 0.3s ease-in-out;
 }
+
+/* Configuración global de transiciones */
+@layer utilities {
+  .transition-all {
+    transition-property: all;
+    transition-duration: 300ms;
+    transition-timing-function: ease;
+  }
+}
+
+/* Estilos para el diálogo */
+@layer utilities {
+  .group-hover\:opacity-100 {
+    opacity: 1;
+  }
+
+  .group-hover\:pointer-events-auto {
+    pointer-events: auto;
+  }
+}

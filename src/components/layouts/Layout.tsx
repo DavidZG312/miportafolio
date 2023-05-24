@@ -60,10 +60,10 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
             </button>
           </div>
           <nav className="hidden lg:flex space-x-4">
-            <Link to="portafolio" smooth={true} duration={500} className="text-white cursor-pointer">Portafolio</Link>
-            <Link to="portafolio" smooth={true} duration={500} className="text-white cursor-pointer">Skillset</Link>
-            <Link to="portafolio" smooth={true} duration={500} className="text-white cursor-pointer">Experiencia</Link>
-            <Link to="portafolio" smooth={true} duration={500} className="text-white cursor-pointer">Contact</Link>
+            <Link to="portafolio" smooth={true} duration={300} className="text-white cursor-pointer">Portfolio</Link>
+            <Link to="portafolio" smooth={true} duration={300} className="text-white cursor-pointer">Skillset</Link>
+            {/* <Link to="portafolio" smooth={true} duration={300} className="text-white cursor-pointer">Experience</Link> */}
+            <Link to="portafolio" smooth={true} duration={300} className="text-white cursor-pointer">Contact</Link>
           </nav>
         </header>
         <div

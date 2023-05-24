@@ -5,19 +5,72 @@ import ModalPortfolio from "../modal/ModalPortfolio";
 interface Proyects {
     id: number;
     title: string;
-    description: string;
+    description: string[];
     imageUrl: string;
+    danger?: boolean;
+    url?: string;
 }
 
 const proyects: Proyects[] = [
-    { id: 1, title: 'SIEDCO', description: 'Programa dirigido a Hechos', imageUrl: '/img/LoginSiedco.PNG' },
-    { id: 2, title: 'SIDENCO', description: 'Programa dirigido a Hechos', imageUrl: '/img/LoginSidenco.PNG' },
-    { id: 3, title: 'SIEVI', description: 'Programa dirigido a Hechos', imageUrl: '/img/LoginSievi.PNG' },
-    { id: 4, title: 'SITIES', description: 'Programa dirigido a Hechos', imageUrl: '/img/LoginSities.PNG' },
-    { id: 5, title: 'SIPSE', description: 'Programa dirigido a Hechos', imageUrl: '/img/LoginSipse.PNG' },
-    { id: 6, title: 'SIGIC', description: 'Programa dirigido a Hechos', imageUrl: '/img/LoginSigic.PNG' },
-    { id: 7, title: 'DCCAE', description: 'Programa dirigido a Armas', imageUrl: '/img/LoginDCCAE.PNG' },
-    { id: 8, title: 'SIAEM', description: 'Programa dirigido a Armas', imageUrl: '/img/LoginSIAEM.PNG' },
+    {
+        id: 1,
+        title: 'SIEDCO',
+        imageUrl: '/img/LoginSiedco.PNG',
+        description: [
+            'Sistema de Información Estadístico, Delincuencial, Contravencional y Operativo - Policía Nacional',
+        ],
+        danger: true
+    },
+    {
+        id: 2,
+        title: 'SIDENCO',
+        imageUrl: '/img/LoginSidenco.PNG',
+        description: ['Sistema de denuncias y contravenciones - Policía Nacional'],
+        danger: true
+    },
+    {
+        id: 3,
+        title: 'SIEVI',
+        imageUrl: '/img/LoginSievi.PNG',
+        description: ['Sistema de Información Estadístico Vial - Policía Nacional'],
+        danger: true
+    },
+    {
+        id: 4,
+        title: 'SITIES',
+        imageUrl: '/img/LoginSities.PNG',
+        description: ['Sistema Único de Información sobre Tráfico Ilegal de Especies Silvestres - Policía Nacional'],
+        danger: true
+    },
+    {
+        id: 5,
+        title: 'SIPSE',
+        imageUrl: '/img/LoginSipse.PNG',
+        description: ['Sistema de Información Estadístico, Delincuencial, Contravencional y Operativo - Policía Nacional'],
+        danger: true
+    },
+    {
+        id: 6,
+        title: 'SIGIC',
+        imageUrl: '/img/LoginSigic.PNG',
+        description: ['Sistema Integral para la Gestión de la Investigación Criminal'],
+        danger: true
+    },
+    {
+        id: 7,
+        title: 'DCCAE',
+        imageUrl: '/img/LoginDCCAE.PNG',
+        description: ['DCCAE DEPARTAMENTO CONTROL COMERCIO DE ARMAS, MUNICIONES Y EXPLOSIVOS'],
+        url: 'https://dccae.cgfm.mil.co/dccae/'
+    },
+    {
+        id: 8,
+        title: 'SIAEM',
+        imageUrl: '/img/LoginSIAEM.PNG',
+        description: ['DCCAE SISTEMA CONTROL DE ARMAS SIAEM 2.0'],
+        danger: true
+
+    },
 ]
 
 const Portfolio = () => {
@@ -29,7 +82,7 @@ const Portfolio = () => {
         setContentModal(proyects.filter((item: Proyects) => item.id === id))
         setModal(true)
     }
-   
+
     const handleClose = () => {
         setContentModal([])
         setModal(false)
@@ -37,11 +90,12 @@ const Portfolio = () => {
 
     return (
         <div className="px-4 py-10" id="portafolio">
-            <h1 className="text-2xl font-bold mb-6 text-center">PORTAFOLIO</h1>
-            <div className="border-b-2 border-rgb-23-10-28 w-4/5 mb-8 tex m-auto" style={{ height: '1px' }} />
+            <h1 className="text-2xl font-bold mb-6 text-center">PORTFOLIO</h1>
+            {/* <div className="border-b-2 border-rgb-23-10-28 w-4/5 mb-8 tex m-auto" style={{ height: '1px' }} /> */}
+            <div className="bg-gradient-to-l from-white via-black to-white w-full mt-3 mb-7 h- m-auto rounded-full" style={{ height: '1.5px' }} />
             <div className="grid gap-8 grid-cols-1 md:grid-cols-3">
                 {proyects.map(({ id, title, description, imageUrl }) => (
-                    <CardProyect key={id} title={title} description={description} imageUrl={imageUrl} handleClick={() => handleOpen(id)} />
+                    <CardProyect key={id} title={title} imageUrl={imageUrl} handleClick={() => handleOpen(id)} />
                 ))}
             </div>
             {modal && (
