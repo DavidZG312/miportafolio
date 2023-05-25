@@ -12,15 +12,33 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
 
   const [isOpen, setIsOpen] = useState(false);
   const [isSticky, setIsSticky] = useState(false);
+  const [isHeaderSticky, setIsHeaderSticky] = useState(false);
+  const [prevScrollPos, setPrevScrollPos] = useState(0);
+
+
+  /*   const handleScroll = () => {
+      const header = document.getElementById("header");
+      if (header) {
+        // setIsSticky(header.offsetTop <= 0);
+        setIsSticky(window.scrollY >= header.offsetTop);
+        // setIsSticky(header.getBoundingClientRect().top <= 0);
+      }
+    }; */
 
   const handleScroll = () => {
+    const currentScrollPos = window.pageYOffset;
     const header = document.getElementById("header");
+
     if (header) {
-      setIsSticky(header.offsetTop <= 0);
+      /* console.log(header.offsetTop) */
+      setIsHeaderSticky(window.pageYOffset > (prevScrollPos - 120));
+     // setPrevScrollPos(currentScrollPos);
     }
   };
 
   React.useEffect(() => {
+    const header = document.getElementById("header");
+    if (header) setPrevScrollPos(header.offsetTop)
     window.addEventListener("scroll", handleScroll);
     return () => {
       window.removeEventListener("scroll", handleScroll);
@@ -32,8 +50,11 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
       <div className="flex flex-col min-h-screen">
         <header
           id="header"
-          className={`bg-rgb-23-10-28 h-14 flex justify-between items-center px-4 w-full ${isSticky ? "fixed top-0" : ""
+          // className={`bg-rgb-23-10-28 h-14 flex justify-between items-center px-4 w-full ${isSticky ? "fixed top-0" : ""}`}
+          // className={`bg-rgb-23-10-28 h-14 flex justify-between items-center px-4 w-full ${isSticky ? "fixed top-0 left-0 right-0 z-50" : ""   }`}
+          className={`bg-rgb-23-10-28 h-14 flex justify-between items-center px-4 w-full ${isHeaderSticky ? "fixed top-0 left-0 right-0 z-50" : ""
             }`}
+
         >
           <div className="text-white font-bold text-xs cursor-pointer hover:text-white">
             <a href="#" target="_parent" rel="noopener noreferrer">
@@ -62,7 +83,7 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
           <nav className="hidden lg:flex space-x-4">
             <Link to="portafolio" smooth={true} duration={300} className="text-white cursor-pointer">Portfolio</Link>
             <Link to="portafolio" smooth={true} duration={300} className="text-white cursor-pointer">Skillset</Link>
-            {/* <Link to="portafolio" smooth={true} duration={300} className="text-white cursor-pointer">Experience</Link> */}
+            <Link to="portafolio" smooth={true} duration={300} className="text-white cursor-pointer">Experience</Link>
             <Link to="portafolio" smooth={true} duration={300} className="text-white cursor-pointer">Contact</Link>
           </nav>
         </header>
@@ -90,7 +111,7 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
         </div>
         <main className="flex-grow">{children}</main>
       </div>
-    </div>
+    </div >
   );
 };
 

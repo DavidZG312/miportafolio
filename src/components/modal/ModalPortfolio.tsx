@@ -62,7 +62,7 @@ export default function ModalPortfolio({ contentModal, handleClose }: Props) {
                                     {index === 0 ? (
                                         <h4 className="text-md text-black font-bold text-center">{item}</h4>
                                     ) : (
-                                        <p className="text-sm text-black font-roboto">{item}</p>
+                                        <p className="text-sm text-black font-roboto text-left">{item}</p>
                                     )}
                                     <br />
                                 </>

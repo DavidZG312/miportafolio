@@ -18,6 +18,7 @@ const proyects: Proyects[] = [
         imageUrl: '/img/LoginSiedco.PNG',
         description: [
             'Sistema de Información Estadístico, Delincuencial, Contravencional y Operativo - Policía Nacional',
+            'Este proyecto se desarrolló utilizando Next.js como framework principal, Material-UI para el estilizado de la interfaz y Axios para la comunicación con el backend. Esta combinación de tecnologías permitió crear una aplicación web moderna, rápida y altamente funcional, brindando una excelente experiencia de usuario y una fácil mantenibilidad del código',
         ],
         danger: true
     },
@@ -25,7 +26,8 @@ const proyects: Proyects[] = [
         id: 2,
         title: 'SIDENCO',
         imageUrl: '/img/LoginSidenco.PNG',
-        description: ['Sistema de denuncias y contravenciones - Policía Nacional'],
+        description: ['Sistema de denuncias y contravenciones - Policía Nacional',
+            'Este proyecto se desarrolló utilizando Next.js como framework principal, Material-UI para el estilizado de la interfaz y Axios para la comunicación con el backend. Esta combinación de tecnologías permitió crear una aplicación web moderna, rápida y altamente funcional, brindando una excelente experiencia de usuario y una fácil mantenibilidad del código',],
         danger: true
     },
     {
