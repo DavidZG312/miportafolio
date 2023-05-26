@@ -1,6 +1,7 @@
 import { useState } from "react";
 import CardProyect from "../Cards/CardProyect";
 import ModalPortfolio from "../modal/ModalPortfolio";
+import CardSkillset from "../Cards/CardSkillset";
 
 interface Proyects {
     id: number;
@@ -14,8 +15,8 @@ interface Proyects {
 const proyects: Proyects[] = [
     {
         id: 1,
-        title: 'SIEDCO',
-        imageUrl: '/img/LoginSiedco.PNG',
+        title: 'HTML5',
+        imageUrl: '/icons/HTML5.svg',
         description: [
             'Sistema de Información Estadístico, Delincuencial, Contravencional y Operativo - Policía Nacional',
             'Este proyecto se desarrolló utilizando Next.js como framework principal, Material-UI para el estilizado de la interfaz, Axios para la comunicación con el backend y Redux para un manejo eficiente del estado. Esta combinación de tecnologías permitió crear una aplicación web moderna, rápida y altamente funcional, brindando una excelente experiencia de usuario y una fácil mantenibilidad del código',
@@ -24,8 +25,8 @@ const proyects: Proyects[] = [
     },
     {
         id: 2,
-        title: 'SIDENCO',
-        imageUrl: '/img/LoginSidenco.PNG',
+        title: 'CSS3',
+        imageUrl: '/icons/CSS3.svg',
         description: [
             'Sistema de denuncias y contravenciones - Policía Nacional',
             'Este proyecto se desarrolló utilizando Next.js como framework principal, Material-UI para el estilizado de la interfaz, Axios para la comunicación con el backend y Redux para un manejo eficiente del estado. Esta combinación de tecnologías permitió crear una aplicación web moderna, rápida y altamente funcional, brindando una excelente experiencia de usuario y una fácil mantenibilidad del código',
@@ -34,8 +35,8 @@ const proyects: Proyects[] = [
     },
     {
         id: 3,
-        title: 'SIEVI',
-        imageUrl: '/img/LoginSievi.PNG',
+        title: 'JAVASCRIPT',
+        imageUrl: '/icons/JAVASCRIPT.svg',
         description: [
             'Sistema de Información Estadístico Vial - Policía Nacional',
             'Este proyecto se desarrolló utilizando Next.js como framework principal, Material-UI para el estilizado de la interfaz, Axios para la comunicación con el backend y Redux para un manejo eficiente del estado. Esta combinación de tecnologías permitió crear una aplicación web moderna, rápida y altamente funcional, brindando una excelente experiencia de usuario y una fácil mantenibilidad del código',
@@ -44,35 +45,35 @@ const proyects: Proyects[] = [
     },
     {
         id: 4,
-        title: 'SITIES',
-        imageUrl: '/img/LoginSities.PNG',
+        title: 'REACT JS',
+        imageUrl: '/icons/REACT JS.svg',
         description: [
             'Sistema Único de Información sobre Tráfico Ilegal de Especies Silvestres - Policía Nacional',
             'Este proyecto se desarrolló utilizando Next.js como framework principal, Material-UI para el estilizado de la interfaz, Axios para la comunicación con el backend y Redux para un manejo eficiente del estado. Esta combinación de tecnologías permitió crear una aplicación web moderna, rápida y altamente funcional, brindando una excelente experiencia de usuario y una fácil mantenibilidad del código',
         ],
         danger: true
     },
-    {
+   /*  {
         id: 5,
-        title: 'SIPSE',
-        imageUrl: '/img/LoginSipse.PNG',
+        title: 'NEXT JS',
+        imageUrl: '/icons/CSS3.svg',
         description: [
             'Sistema de Información Estadístico, Delincuencial, Contravencional y Operativo - Policía Nacional',
             'Este proyecto se desarrolló utilizando Next.js como framework principal, Material-UI para el estilizado de la interfaz, Axios para la comunicación con el backend y Redux para un manejo eficiente del estado. Esta combinación de tecnologías permitió crear una aplicación web moderna, rápida y altamente funcional, brindando una excelente experiencia de usuario y una fácil mantenibilidad del código',
         ],
         danger: true
-    },
+    }, */
     {
         id: 6,
-        title: 'SIGIC',
-        imageUrl: '/img/LoginSigic.PNG',
+        title: 'GIT',
+        imageUrl: '/icons/GIT.svg',
         description: [
             'Sistema Integral para la Gestión de la Investigación Criminal',
             'Este proyecto se desarrolló utilizando Next.js como framework principal, Material-UI para el estilizado de la interfaz, Axios para la comunicación con el backend y Redux para un manejo eficiente del estado. Esta combinación de tecnologías permitió crear una aplicación web moderna, rápida y altamente funcional, brindando una excelente experiencia de usuario y una fácil mantenibilidad del código',
         ],
         danger: true
     },
-    {
+  /*   {
         id: 7,
         title: 'DCCAE',
         imageUrl: '/img/LoginDCCAE.PNG',
@@ -92,10 +93,10 @@ const proyects: Proyects[] = [
         ],
         danger: true
 
-    },
+    }, */
 ]
 
-const Portfolio = () => {
+const Skillset = () => {
 
     const [modal, setModal] = useState(false)
     const [contentModal, setContentModal] = useState<Proyects[]>([])
@@ -111,20 +112,17 @@ const Portfolio = () => {
     }
 
     return (
-        <div className="px-4 py-10" id="portafolio">
-            <h1 className="text-3xl font-bold mb-6 text-center">PORTFOLIO</h1>
+        <div className="px-4 py-10 bg-rgb-23-10-28" id="portafolio">
+            <h1 className="text-3xl font-bold mb-6 text-center text-white">SKILLSET</h1>
             {/* <div className="border-b-2 border-rgb-23-10-28 w-4/5 mb-8 tex m-auto" style={{ height: '1px' }} /> */}
-            <div className="bg-gradient-to-l from-white via-black to-white w-full mt-3 mb-7 h- m-auto rounded-full" style={{ height: '1.5px' }} />
-            <div className="grid gap-8 grid-cols-1 md:grid-cols-3 p-5">
+            <div className="bg-gradient-to-l from-black via-white to-black w-full mt-3 mb-7 h- m-auto rounded-full" style={{ height: '1.5px' }} />
+            <div className="grid gap-8 grid-cols-1 md:grid-cols-6 p-5 px-16 justify-center">
                 {proyects.map(({ id, title, description, imageUrl }) => (
-                    <CardProyect key={id} title={title} imageUrl={imageUrl} handleClick={() => handleOpen(id)} />
+                    <CardSkillset key={id} title={title} imageUrl={imageUrl} handleClick={() => handleOpen(id)} />
                 ))}
             </div>
-            {modal && (
-                <ModalPortfolio contentModal={contentModal} handleClose={handleClose} />
-            )}
         </div>
     );
 };
 
-export default Portfolio;
+export default Skillset;
