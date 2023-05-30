@@ -112,11 +112,11 @@ const Skillset = () => {
     }
 
     return (
-        <div className="px-4 py-10 bg-rgb-23-10-28" id="portafolio">
-            <h1 className="text-3xl font-bold mb-6 text-center text-white">SKILLSET</h1>
+        <div className="px-4 py-20 bg-rgb-23-10-28" id="skillset">
+            <h1 className="text-3xl font-bold mb-10 text-center text-white">SKILLSET</h1>
             {/* <div className="border-b-2 border-rgb-23-10-28 w-4/5 mb-8 tex m-auto" style={{ height: '1px' }} /> */}
             <div className="bg-gradient-to-l from-black via-white to-black w-full mt-3 mb-7 h- m-auto rounded-full" style={{ height: '1.5px' }} />
-            <div className="grid gap-8 grid-cols-1 md:grid-cols-6 p-5 px-16 justify-center">
+            <div className="grid gap-8 grid-cols-1 md:grid-cols-5 p-5 px-16 justify-center">
                 {proyects.map(({ id, title, description, imageUrl }) => (
                     <CardSkillset key={id} title={title} imageUrl={imageUrl} handleClick={() => handleOpen(id)} />
                 ))}

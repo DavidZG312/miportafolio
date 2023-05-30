@@ -17,6 +17,7 @@ module.exports = {
         'rgb-243-248-249': 'rgb(243, 248, 249)',
         'rgb-11-113-137': 'rgb(11, 113, 137)',
         'rgb-38-46-62': 'rgb(38, 46, 62)',
+        'rgb-25-34-52': 'rgb(25, 34, 52)',
       },
       fontFamily: {
         roboto: ['Roboto', 'sans-serif'],

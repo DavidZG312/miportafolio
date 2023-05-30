@@ -111,8 +111,8 @@ const Portfolio = () => {
     }
 
     return (
-        <div className="px-4 py-10" id="portafolio">
-            <h1 className="text-3xl font-bold mb-6 text-center">PORTFOLIO</h1>
+        <div className="px-4 py-20" id="portafolio">
+            <h1 className="text-3xl font-bold mb-10 text-center">PORTFOLIO</h1>
             {/* <div className="border-b-2 border-rgb-23-10-28 w-4/5 mb-8 tex m-auto" style={{ height: '1px' }} /> */}
             <div className="bg-gradient-to-l from-white via-black to-white w-full mt-3 mb-7 h- m-auto rounded-full" style={{ height: '1.5px' }} />
             <div className="grid gap-8 grid-cols-1 md:grid-cols-3 p-5">

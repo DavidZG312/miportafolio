@@ -14,7 +14,7 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
   const [isSticky, setIsSticky] = useState(false);
   const [isHeaderSticky, setIsHeaderSticky] = useState(false);
   const [prevScrollPos, setPrevScrollPos] = useState(0);
-
+  console.log(prevScrollPos)
 
   /*   const handleScroll = () => {
       const header = document.getElementById("header");
@@ -52,7 +52,7 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
           id="header"
           // className={`bg-rgb-23-10-28 h-14 flex justify-between items-center px-4 w-full ${isSticky ? "fixed top-0" : ""}`}
           // className={`bg-rgb-23-10-28 h-14 flex justify-between items-center px-4 w-full ${isSticky ? "fixed top-0 left-0 right-0 z-50" : ""   }`}
-          className={`bg-rgb-23-10-28 h-14 flex justify-between items-center px-4 w-full ${isHeaderSticky ? "fixed top-0 left-0 right-0 z-50" : ""
+          className={`bg-rgb-23-10-28 h-14 flex justify-between items-center px-4 w-full shadow-sm blur-1 shadow-white ${isHeaderSticky ? "fixed top-0 left-0 right-0 z-50" : ""
             }`}
 
         >
@@ -82,9 +82,9 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
           </div>
           <nav className="hidden lg:flex space-x-4">
             <Link to="portafolio" smooth={true} duration={300} className="text-white cursor-pointer">Portfolio</Link>
-            <Link to="portafolio" smooth={true} duration={300} className="text-white cursor-pointer">Skillset</Link>
+            <Link to="skillset" smooth={true} duration={300} className="text-white cursor-pointer">Skillset</Link>
         {/*     <Link to="portafolio" smooth={true} duration={300} className="text-white cursor-pointer">Experience</Link> */}
-            <Link to="portafolio" smooth={true} duration={300} className="text-white cursor-pointer">Contact</Link>
+            <Link to="contact" smooth={true} duration={300} className="text-white cursor-pointer">Contact</Link>
           </nav>
         </header>
         <div
