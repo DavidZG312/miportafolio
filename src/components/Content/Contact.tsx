@@ -46,10 +46,9 @@ const Contact = () => {
     }
 
     // Luego, puedes usar la función sendEmail en tu componente React, por ejemplo, en un formulario de contacto
-    <form onSubmit={sendEmail}>
-        {/* Resto de los campos del formulario */}
-        <button type="submit">Enviar correo electrónico</button>
-    </form>
+    /*     <form onSubmit={sendEmail}>
+            <button type="submit">Enviar correo electrónico</button>
+        </form> */
 
 
     return (
@@ -62,11 +61,15 @@ const Contact = () => {
                     <h4 className="text-center text-2xl text-white">
                         Your email:
                     </h4>
-                    <input required className="w-4/5 h-12 my-5 p-5 mx-36" name="email" type="email" placeholder="johndoe@correo.com" onChange={handleChange} />
+                    <div className="text-center">
+                        <input required className="w-5/6 h-12 my-5 p-5 " name="email" type="email" placeholder="johndoe@correo.com" onChange={handleChange} />
+                    </div>
                     <h4 className="text-center text-2xl text-white">
                         Your message:
                     </h4>
-                    <textarea required className="w-4/5 h-40 my-5 p-5 mx-36" name="message" onChange={handleChange} />
+                    <div className="text-center">
+                        <textarea required className="w-5/6 my-5 p-5 " name="message" onChange={handleChange} rows={4} />
+                    </div>
                     <div className='text-center pt-4'>
                         <button
                             type="submit"
