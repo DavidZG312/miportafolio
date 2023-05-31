@@ -51,7 +51,7 @@ const About = () => {
           <source src="/video/pexels-distill-852421-1920x1080-30fps.mp4" type="video/mp4" />
         </video>
       </div>
-      <div className="relative z-10">
+      <div className="relative z-5">
         <div className="flex flex-col items-center justify-center px-4 py-16 sm:px-6 lg:py-12 lg:px-8">
         {/*   <img
             src="/profile.jpg"

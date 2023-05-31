@@ -37,7 +37,7 @@ export default function ButtonHover({
                 <div
                     onMouseEnter={handleMouseEnter}
                     onMouseLeave={handleMouseLeave}
-                    className="absolute bg-black  p-4 text-white rounded-md shadow-lg transform -translate-x-1/2 bottom-full -mb-2 transition-all duration-300 opacity-90 pointer-events-auto text-sm w-96 text-justify">
+                    className="absolute bg-black  p-4 text-white rounded-md shadow-lg transform -translate-x-1/2 bottom-full -mb-2 transition-all duration-300 opacity-90 pointer-events-auto text-sm w-80 text-justify">
                     {content}
                 </div>
             )}

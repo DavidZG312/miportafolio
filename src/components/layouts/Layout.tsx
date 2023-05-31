@@ -51,7 +51,7 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
           id="header"
           // className={`bg-rgb-23-10-28 h-14 flex justify-between items-center px-4 w-full ${isSticky ? "fixed top-0" : ""}`}
           // className={`bg-rgb-23-10-28 h-14 flex justify-between items-center px-4 w-full ${isSticky ? "fixed top-0 left-0 right-0 z-50" : ""   }`}
-          className={`bg-rgb-23-10-28 h-14 flex justify-between items-center px-4 w-full shadow-sm blur-1 shadow-white ${isHeaderSticky ? "fixed top-0 left-0 right-0 z-50" : ""
+          className={`bg-rgb-23-10-28 h-14 flex justify-between items-center px-4 w-full shadow-sm blur-1 shadow-white ${isHeaderSticky ? "fixed top-0 left-0 right-0 z-30" : ""
             }`}
 
         >
