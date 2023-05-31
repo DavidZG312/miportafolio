@@ -14,7 +14,6 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
   const [isSticky, setIsSticky] = useState(false);
   const [isHeaderSticky, setIsHeaderSticky] = useState(false);
   const [prevScrollPos, setPrevScrollPos] = useState(0);
-  console.log(prevScrollPos)
 
   /*   const handleScroll = () => {
       const header = document.getElementById("header");

@@ -3,6 +3,8 @@ import CardProyect from "../Cards/CardProyect";
 import ModalPortfolio from "../modal/ModalPortfolio";
 import ButtonContact from "../Buttons/ButtonContact";
 import emailjs from 'emailjs-com';
+import Swal from 'sweetalert2'
+import Spinner from "../spinner/Spinner";
 
 interface dataMail {
     email: string;
@@ -15,6 +17,7 @@ const Contact = () => {
         email: '',
         message: ''
     })
+    const [spinner, setSpinner] = useState(false)
 
     const { email, message } = data;
 
@@ -26,8 +29,6 @@ const Contact = () => {
     }
 
     const sendEmail = (e: SyntheticEvent) => {
-        e.preventDefault();
-
         emailjs.send(
             'service_vszfcuc',
             'template_ffgcve7',
@@ -38,11 +39,25 @@ const Contact = () => {
             'R9HoewGFFDLApfYlM'
         )
             .then((response) => {
-                console.log('Email sent successfully!', response.status, response.text);
+                /*   Swal.fire(
+                      'Se ha enviado con exito el correo.',
+                    
+                      'success'
+                  ) */
+
+                Swal.fire({
+                    // position: 'top-end',
+                    icon: 'success',
+                    title: 'Se ha enviado con exito el correo',
+                    showConfirmButton: false,
+                    timer: 1500
+                })
+
             })
             .catch((error) => {
                 console.error('Error sending email:', error);
             });
+        setSpinner(false)
     }
 
     // Luego, puedes usar la función sendEmail en tu componente React, por ejemplo, en un formulario de contacto
@@ -53,11 +68,18 @@ const Contact = () => {
 
     return (
         <div className="px-4 py-20" id="contact">
+            {spinner && (<Spinner />)}
             <h1 className="text-3xl font-bold mb-10 text-center">CONTACT</h1>
             {/* <div className="border-b-2 border-rgb-23-10-28 w-4/5 mb-8 tex m-auto" style={{ height: '1px' }} /> */}
             <div className="bg-gradient-to-l from-white via-black to-white w-full mt-3 mb-7 h- m-auto rounded-full" style={{ height: '1.5px' }} />
             <div className="w-5/6 p-10 bg-rgb-25-34-52 m-auto mt-16 rounded-2xl">
-                <form onSubmit={sendEmail}>
+                <form onSubmit={(e) => {
+                    e.preventDefault();
+                    setSpinner(true)
+                    setTimeout(() => {
+                        sendEmail(e)
+                    }, 2000);
+                }}>
                     <h4 className="text-center text-2xl text-white">
                         Your email:
                     </h4>
