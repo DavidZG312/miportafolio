@@ -5,7 +5,7 @@ const About = () => {
     /*  <div className="container mt-40 mx-auto px-4 py-8 md:flex md:items-center">
        <div className="md:w-1/3">
          <img
-           src="/profile.jpg"
+           src="/profile.webp"
            alt="Profile"
            className="rounded-full w-64 mx-auto"
          />
@@ -54,12 +54,12 @@ const About = () => {
       <div className="relative z-5">
         <div className="flex flex-col items-center justify-center px-4 py-16 sm:px-6 lg:py-12 lg:px-8">
         {/*   <img
-            src="/profile.jpg"
+            src="/profile.webp"
             alt="Profile"
             className="rounded-full h-48 w-48 border-4 border-white"
           /> */}
           <div className="relative">
-            <div className="h-64 w-64 bg-cover bg-center bg-gray-400 rounded-full" style={{ backgroundImage:`url('/img/profile.jpg')` }}>
+            <div className="h-64 w-64 bg-cover bg-center bg-gray-400 rounded-full" style={{ backgroundImage:`url('/img/profile.webp')` }}>
             </div>
             <div className="flex flex-col items-center justify-center px-4 py-8">
               <hr className="border-t-4 border-rgb-23-10-28 w-64 rounded-full mb-4" />

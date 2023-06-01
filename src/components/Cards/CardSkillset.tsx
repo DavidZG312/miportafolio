@@ -3,12 +3,9 @@ import React from "react";
 interface Props {
     title: string;
     imageUrl: string;
-    iconUrl?: string;
-    url?: string;
-    handleClick: () => any;
 }
 
-const CardSkillset = ({ title, imageUrl, iconUrl = "/icons/MagnifyingGlass.svg", url = "#", handleClick }: Props) => {
+const CardSkillset = ({ title, imageUrl }: Props) => {
     const [isHovered, setIsHovered] = React.useState(false);
 
     return (
@@ -16,7 +13,6 @@ const CardSkillset = ({ title, imageUrl, iconUrl = "/icons/MagnifyingGlass.svg",
             className="relative cursor-pointer border h-36 bg-gray-100 border-gray-200 rounded-md shadow-lg w-full h-260px overflow-hidden transition-transform duration-300 ease-in-out transform hover:scale-105"
             onMouseEnter={() => setIsHovered(true)}
             onMouseLeave={() => setIsHovered(false)}
-            onClick={handleClick}
         >
             <div className="absolute inset-0 bg-cover bg-center z-0">
                 <img src={imageUrl} alt="icon" className={`h-24 w-24 m-auto mt-8`} />

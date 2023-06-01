@@ -13,7 +13,7 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
   const [isOpen, setIsOpen] = useState(false);
   const [isSticky, setIsSticky] = useState(false);
   const [isHeaderSticky, setIsHeaderSticky] = useState(false);
-  const [prevScrollPos, setPrevScrollPos] = useState(0);
+  const [prevScrollPos, setPrevScrollPos] = useState(544);
 
   /*   const handleScroll = () => {
       const header = document.getElementById("header");
@@ -29,15 +29,14 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
     const header = document.getElementById("header");
 
     if (header) {
-      /* console.log(header.offsetTop) */
-      setIsHeaderSticky(window.pageYOffset > (prevScrollPos - 120));
-     // setPrevScrollPos(currentScrollPos);
+      setIsHeaderSticky(window.pageYOffset > (prevScrollPos - 130));
+      // setPrevScrollPos(currentScrollPos);
     }
   };
 
   React.useEffect(() => {
-    const header = document.getElementById("header");
-    if (header) setPrevScrollPos(header.offsetTop)
+   // const header = document.getElementById("header");
+   // if (header) setPrevScrollPos(header.offsetTop)
     window.addEventListener("scroll", handleScroll);
     return () => {
       window.removeEventListener("scroll", handleScroll);
@@ -82,29 +81,30 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
           <nav className="hidden lg:flex space-x-4">
             <Link to="portafolio" smooth={true} duration={300} className="text-white cursor-pointer">Portfolio</Link>
             <Link to="skillset" smooth={true} duration={300} className="text-white cursor-pointer">Skillset</Link>
-        {/*     <Link to="portafolio" smooth={true} duration={300} className="text-white cursor-pointer">Experience</Link> */}
             <Link to="contact" smooth={true} duration={300} className="text-white cursor-pointer">Contact</Link>
           </nav>
         </header>
         <div
           className={`${isOpen ? "block" : "hidden"
-            } lg:hidden bg-rgb-11-113-137 px-2 pt-2 pb-3 w-full text-white`}
+            } lg:hidden bg-rgb-23-10-28 px-2 pt-2 pb-3 w-full text-white fixed top-14 left-0 right-0 z-30 border-t-2 border-gray-600`}
         >
           <ul>
             <li className="my-2">
-              <a className="block hover:bg-white hover:text-blue-900 py-2 px-4 rounded">
+              <Link to="portafolio" className="block hover:bg-white hover:text-blue-900 py-2 px-4 rounded">
                 Home
-              </a>
+              </Link>
             </li>
+            <div className="bg-white w-full h- m-auto rounded-full" style={{ height: '1px' }} />
             <li className="my-2">
-              <a className="block hover:bg-white hover:text-blue-900 py-2 px-4 rounded">
+              <Link to="skillset" className="block hover:bg-white hover:text-blue-900 py-2 px-4 rounded">
                 Portafolio
-              </a>
+              </Link>
             </li>
+            <div className="bg-white w-full h- m-auto rounded-full" style={{ height: '1px' }} />
             <li className="my-2">
-              <a className="block hover:bg-white hover:text-blue-900 py-2 px-4 rounded">
+              <Link to="contact" className="block hover:bg-white hover:text-blue-900 py-2 px-4 rounded">
                 Contacto
-              </a>
+              </Link>
             </li>
           </ul>
         </div>
