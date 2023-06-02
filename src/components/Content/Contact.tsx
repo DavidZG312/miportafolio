@@ -41,25 +41,18 @@ const Contact = () => {
             'R9HoewGFFDLApfYlM'
         )
             .then((response) => {
-                /*   Swal.fire(
-                      'Se ha enviado con exito el correo.',
-                    
-                      'success'
-                  ) */
-
                 Swal.fire({
                     // position: 'top-end',
                     icon: 'success',
-                    title: 'Se ha enviado con exito el correo',
+                    title: 'Se ha enviado con exito el correo, me pondre en contacto contigo lo antes posible.',
                     showConfirmButton: false,
-                    timer: 1500
+                    timer: 5000
                 })
-
+                setSpinner(false)
             })
             .catch((error) => {
-                console.error('Error sending email:', error);
+                setSpinner(false)
             });
-        setSpinner(false)
     }
 
     // Luego, puedes usar la función sendEmail en tu componente React, por ejemplo, en un formulario de contacto

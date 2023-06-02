@@ -36,7 +36,7 @@ export default function ModalPortfolio({ contentModal, handleClose }: Props) {
                         {data.title}
                         <button
                             onClick={handleClose}
-                            className="absolute right-0 top-0 p-4"
+                            className="absolute right-0 top-0 p-4 transition-transform duration-300 ease-in-out transform hover:scale-150 rounded-full"
                         >
                             <svg
                                 className="h-6 w-6 fill-current text-white"

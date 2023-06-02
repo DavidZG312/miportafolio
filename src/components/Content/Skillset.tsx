@@ -18,14 +18,7 @@ const proyects: Proyects[] = [
         title: 'CSS3',
         imageUrl: '/icons/CSS3.svg',
     },
-    {
-        title: 'SASS',
-        imageUrl: '/icons/SASS.svg',
-    },
-    {
-        title: 'Bootstrap',
-        imageUrl: '/icons/Bootstrap.svg',
-    },
+
     {
         title: 'JAVASCRIPT',
         imageUrl: '/icons/JAVASCRIPT.svg',
@@ -38,6 +31,14 @@ const proyects: Proyects[] = [
         title: 'GIT',
         imageUrl: '/icons/GIT.svg',
     },
+    {
+        title: 'SASS',
+        imageUrl: '/icons/SASS.svg',
+    },
+    {
+        title: 'Bootstrap',
+        imageUrl: '/icons/Bootstrap.svg',
+    },
 ]
 
 const Skillset = () => {
@@ -46,7 +47,7 @@ const Skillset = () => {
 
     return (
         <InView onChange={(inView) => setInView(inView)}>
-            <div className={`px-4 py-20 bg-rgb-23-10-28 ${inView ? 'fade-in-animation' : 'opacity-0'}`}  id="skillset">
+            <div className={`px-4 py-20 bg-rgb-23-10-28 ${inView ? 'fade-in-animation' : 'opacity-0'}`} id="skillset">
                 <h1 className="text-3xl font-bold mb-10 text-center text-white">SKILLSET</h1>
                 {/* <div className="border-b-2 border-rgb-23-10-28 w-4/5 mb-8 tex m-auto" style={{ height: '1px' }} /> */}
                 <div className="bg-gradient-to-l from-black via-white to-black w-full mt-3 mb-7 h- m-auto rounded-full" style={{ height: '1.5px' }} />
