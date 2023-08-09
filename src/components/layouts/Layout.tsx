@@ -35,8 +35,8 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
   };
 
   React.useEffect(() => {
-   // const header = document.getElementById("header");
-   // if (header) setPrevScrollPos(header.offsetTop)
+    // const header = document.getElementById("header");
+    // if (header) setPrevScrollPos(header.offsetTop)
     window.addEventListener("scroll", handleScroll);
     return () => {
       window.removeEventListener("scroll", handleScroll);
@@ -79,7 +79,7 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
             </button>
           </div>
           <nav className="hidden lg:flex space-x-4">
-            <Link to="portafolio" smooth={true} duration={300} className="text-white cursor-pointer">Portfolio</Link>
+            <Link to="experience" smooth={true} duration={300} className="text-white cursor-pointer">Experience</Link>
             <Link to="skillset" smooth={true} duration={300} className="text-white cursor-pointer">Skillset</Link>
             <Link to="contact" smooth={true} duration={300} className="text-white cursor-pointer">Contact</Link>
           </nav>
@@ -90,14 +90,14 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
         >
           <ul>
             <li className="my-2">
-              <Link to="portafolio" className="block hover:bg-white hover:text-blue-900 py-2 px-4 rounded">
-                Home
+              <Link to="experience" className="block hover:bg-white hover:text-blue-900 py-2 px-4 rounded">
+                Experience
               </Link>
             </li>
             <div className="bg-white w-full h- m-auto rounded-full" style={{ height: '1px' }} />
             <li className="my-2">
               <Link to="skillset" className="block hover:bg-white hover:text-blue-900 py-2 px-4 rounded">
-                Portafolio
+                Skillset
               </Link>
             </li>
             <div className="bg-white w-full h- m-auto rounded-full" style={{ height: '1px' }} />

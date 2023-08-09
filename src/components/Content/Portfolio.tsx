@@ -114,8 +114,8 @@ const Portfolio = () => {
     
     return (
         <InView onChange={(inView) => setInView(inView)}>
-            <div  className={`px-4 py-20 ${inView ? 'fade-in-animation' : 'opacity-0'}`} id="portafolio">
-                <h1 className="text-3xl font-bold mb-10 text-center">PORTFOLIO</h1>
+            <div  className={`px-4 py-20 ${inView ? 'fade-in-animation' : 'opacity-0'}`} id="experience">
+                <h1 className="text-3xl font-bold mb-10 text-center">EXPERIENCE</h1>
                 {/* <div className="border-b-2 border-rgb-23-10-28 w-4/5 mb-8 tex m-auto" style={{ height: '1px' }} /> */}
                 <div className="bg-gradient-to-l from-white via-black to-white w-full mt-3 mb-7 h- m-auto rounded-full" style={{ height: '1.5px' }} />
                 <div className="grid gap-8 grid-cols-1 lg:grid-cols-3 md:grid-cols-2 p-5">
