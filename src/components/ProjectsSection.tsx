@@ -62,7 +62,7 @@ const projects = [
   },
   {
     title: "KAMPOTIC",
-    organization: "Proyecto Personal",
+    organization: "HEWTEC – VERY HIGH TECHNOLOGY FOR WORLD SAS",
     description:
       "Aplicación web orientada a la comercialización directa de productos agrícolas, permitiendo a productores publicar su oferta y a los usuarios consultar, negociar precios y comunicarse en tiempo real con los vendedores.",
     tags: ["Next.js", "Tailwind CSS", "Redux", "Axios", "WebSockets"],
