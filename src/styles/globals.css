@@ -1,120 +1,104 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 243, 242, 239;
-  scroll-behavior: smooth;
-}
-
-/*
-@media (prefers-color-scheme: dark) {
+@layer base {
   :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
+    --background: 40 20% 98%;
+    --foreground: 220 20% 20%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 220 20% 20%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 220 20% 20%;
+
+    --primary: 168 76% 36%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 40 30% 94%;
+    --secondary-foreground: 220 20% 20%;
+
+    --muted: 40 20% 92%;
+    --muted-foreground: 220 10% 50%;
+
+    --accent: 168 50% 95%;
+    --accent-foreground: 168 76% 30%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 40 20% 88%;
+    --input: 40 20% 88%;
+    --ring: 168 76% 36%;
+
+    --radius: 0.75rem;
+
+    /* Custom tokens */
+    --gradient-hero: linear-gradient(135deg, hsl(40 30% 97%) 0%, hsl(168 30% 95%) 100%);
+    --shadow-soft: 0 2px 20px -4px hsl(220 20% 20% / 0.08);
+    --shadow-card: 0 4px 30px -8px hsl(220 20% 20% / 0.1);
+    --shadow-hover: 0 8px 40px -12px hsl(168 76% 36% / 0.2);
   }
 }
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
-}
- */
+@layer base {
+  * {
+    @apply border-border;
+  }
 
-/* Transición que hace que el ancho del divisor se reduzca */
-.transition-all {
-  transition: all 0.3s ease-in-out;
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: 'DM Sans', sans-serif;
+  }
 }
 
-/* Configuración global de transiciones */
 @layer utilities {
-  .transition-all {
-    transition-property: all;
-    transition-duration: 300ms;
-    transition-timing-function: ease;
-  }
-}
-
-/* Estilos para el diálogo */
-@layer utilities {
-  .group-hover\:opacity-100 {
-    opacity: 1;
+  .text-gradient {
+    @apply bg-gradient-to-r from-primary to-accent-foreground bg-clip-text text-transparent;
   }
 
-  .group-hover\:pointer-events-auto {
-    pointer-events: auto;
-  }
-}
-
-.spinner {
-  width: 40px;
-  height: 40px;
-
-  position: relative;
-  margin: 100px auto;
-}
-
-.double-bounce1,
-.double-bounce2 {
-  width: 100%;
-  height: 100%;
-  border-radius: 50%;
-  background-color: #333;
-  opacity: 0.6;
-  position: absolute;
-  top: 0;
-  left: 0;
- background-color: #fff;
-  -webkit-animation: sk-bounce 2.0s infinite ease-in-out;
-  animation: sk-bounce 2.0s infinite ease-in-out;
-}
-
-.double-bounce2 {
-  -webkit-animation-delay: -1.0s;
-  animation-delay: -1.0s;
-}
-
-@-webkit-keyframes sk-bounce {
-
-  0%,
-  100% {
-    -webkit-transform: scale(0.0)
+  .hover-lift {
+    @apply transition-all duration-300 ease-out;
   }
 
-  50% {
-    -webkit-transform: scale(1.0)
-  }
-}
-
-@keyframes sk-bounce {
-
-  0%,
-  100% {
-    transform: scale(0.0);
-    -webkit-transform: scale(0.0);
+  .hover-lift:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-hover);
   }
 
-  50% {
-    transform: scale(1.0);
-    -webkit-transform: scale(1.0);
+  .section-fade-in {
+    animation: fadeInUp 0.6s ease-out forwards;
   }
-}
 
-@keyframes fade-in {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
-}
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
 
-.fade-in-animation {
-  animation: fade-in 2s;
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .skill-bar {
+    @apply relative h-2 rounded-full overflow-hidden bg-muted;
+  }
+
+  .skill-bar-fill {
+    @apply absolute left-0 top-0 h-full rounded-full bg-primary transition-all duration-700 ease-out;
+  }
 }
