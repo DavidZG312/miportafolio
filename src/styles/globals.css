@@ -42,6 +42,42 @@
     --shadow-card: 0 4px 30px -8px hsl(220 20% 20% / 0.1);
     --shadow-hover: 0 8px 40px -12px hsl(168 76% 36% / 0.2);
   }
+
+  .dark {
+    --background: 220 20% 10%;
+    --foreground: 40 20% 95%;
+
+    --card: 220 18% 13%;
+    --card-foreground: 40 20% 95%;
+
+    --popover: 220 18% 13%;
+    --popover-foreground: 40 20% 95%;
+
+    --primary: 168 70% 45%;
+    --primary-foreground: 220 20% 10%;
+
+    --secondary: 220 15% 18%;
+    --secondary-foreground: 40 20% 90%;
+
+    --muted: 220 15% 20%;
+    --muted-foreground: 220 10% 60%;
+
+    --accent: 168 40% 18%;
+    --accent-foreground: 168 70% 60%;
+
+    --destructive: 0 70% 50%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 220 15% 20%;
+    --input: 220 15% 20%;
+    --ring: 168 70% 45%;
+
+    /* Custom tokens - dark */
+    --gradient-hero: linear-gradient(135deg, hsl(220 20% 10%) 0%, hsl(220 18% 14%) 100%);
+    --shadow-soft: 0 2px 20px -4px hsl(0 0% 0% / 0.3);
+    --shadow-card: 0 4px 30px -8px hsl(0 0% 0% / 0.4);
+    --shadow-hover: 0 8px 40px -12px hsl(168 70% 45% / 0.3);
+  }
 }
 
 @layer base {

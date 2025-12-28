@@ -1,6 +1,7 @@
 import '../styles/globals.css'
 import { Inter } from 'next/font/google'
 import type { Metadata } from 'next'
+import { ThemeProvider } from '@/hooks/useTheme'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -35,25 +36,27 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="es">
-      <body className={inter.className}>
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify({
-              '@context': 'https://schema.org',
-              '@type': 'Person',
-              name: 'David Zabala Granados',
-              url: 'https://example.com/',
-              jobTitle: 'Desarrollador Front-end',
-              sameAs: [
-                'https://www.linkedin.com',
-                'https://github.com'
-              ]
-            })
-          }}
-        />
-        {children}
-      </body>
+      <ThemeProvider>
+        <body className={inter.className}>
+          <script
+            type="application/ld+json"
+            dangerouslySetInnerHTML={{
+              __html: JSON.stringify({
+                '@context': 'https://schema.org',
+                '@type': 'Person',
+                name: 'David Zabala Granados',
+                url: 'https://example.com/',
+                jobTitle: 'Desarrollador Front-end',
+                sameAs: [
+                  'https://www.linkedin.com',
+                  'https://github.com'
+                ]
+              })
+            }}
+          />
+          {children}
+        </body>
+      </ThemeProvider>
     </html>
   )
 }
